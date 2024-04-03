@@ -21,12 +21,14 @@ public class MainActivity extends AppCompatActivity {
 
         Button button = findViewById(R.id.button);
         TextView textView = findViewById(R.id.textView2);
+        TextView textViewRozmiar = findViewById(R.id.textView);
         SeekBar seekBar = findViewById(R.id.seekBar);
         seekBar.setOnSeekBarChangeListener(
                 new SeekBar.OnSeekBarChangeListener() {
                     @Override
                     public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                        Toast.makeText(MainActivity.this, Integer.toString(i), Toast.LENGTH_SHORT).show();
+                        textViewRozmiar.setText("Rozmiar: "+Integer.toString(i));
+                        textView.setTextSize(i);
                     }
 
                     @Override
